@@ -48,6 +48,7 @@ extern const KRITAGLOBAL_EXPORT QLoggingCategory &_41013();
 extern const KRITAGLOBAL_EXPORT QLoggingCategory &_41014();
 extern const KRITAGLOBAL_EXPORT QLoggingCategory &_41015();
 extern const KRITAGLOBAL_EXPORT QLoggingCategory &_41016();
+extern const KRITAGLOBAL_EXPORT QLoggingCategory &_41017();
 
 #define dbgResources qCDebug(_30009)
 #define dbgKrita qCDebug(_41000)
@@ -67,6 +68,7 @@ extern const KRITAGLOBAL_EXPORT QLoggingCategory &_41016();
 #define dbgTablet qCDebug(_41014)
 #define dbgOpenGL qCDebug(_41015)
 #define dbgMetaData qCDebug(_41016)
+#define dbgOpenCL qCDebug(_41017)
 
 // Defined in Qt 5.6
 #if QT_VERSION >= 0x050600
@@ -88,6 +90,7 @@ extern const KRITAGLOBAL_EXPORT QLoggingCategory &_41016();
 #define infoTablet qCDebug(_41014)
 #define infoOpenGL qCDebug(_41015)
 #define infoMetaData qCDebug(_41016)
+#define infoOpenCL qCDebug(_41017)
 #endif
 
 #define warnResources qCWarning(_30009)
@@ -108,6 +111,7 @@ extern const KRITAGLOBAL_EXPORT QLoggingCategory &_41016();
 #define warnTablet qCDebug(_41014)
 #define warnOpenGL qCDebug(_41015)
 #define warnMetaData qCDebug(_41016)
+#define warnOpenCL qCDebug(_41017)
 
 #define errResources qCCritical(_30009)
 #define errKrita qCCritical(_41000)
@@ -127,6 +131,7 @@ extern const KRITAGLOBAL_EXPORT QLoggingCategory &_41016();
 #define errTablet qCDebug(_41014)
 #define errOpenGL qCDebug(_41015)
 #define errMetaData qCDebug(_41016)
+#define errOpenCL qCDebug(_41017)
 
 // Qt does not yet define qCFatal (TODO: this is an oversight, submit a patch upstream)
 /*

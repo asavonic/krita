@@ -130,7 +130,7 @@ template<class FactoryType>
 typename FactoryType::ReturnType
 createOptimizedClass(typename FactoryType::ParamType param, GPU::OpenCL)
 {
-    if (getenv("KIS_OCL_ENABLE")) {
+    if (!getenv("KIS_OCL_DISABLE")) {
         return FactoryType::template create<GPU::OpenCLImpl>(param);
     }
     return createOptimizedClass<FactoryType>(param);

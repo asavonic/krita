@@ -107,6 +107,7 @@ target_link_libraries( kritapigment
         kritaplugin
         kritastore
         kritaglobal
+        kritaopencl
         ${EXTRA_LIBRARIES}
         KF5::I18n 
         KF5::ConfigCore
