@@ -48,6 +48,9 @@ struct KoOptimizedCompositeOpFactoryPerArch
 
     template<Vc::Implementation _impl>
     static ReturnType create(ParamType param);
+
+    template<GPU::Implementation _impl>
+    static ReturnType create(ParamType param);
 };
 
 

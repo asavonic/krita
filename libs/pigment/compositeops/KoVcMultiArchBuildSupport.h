@@ -60,6 +60,13 @@ namespace Vc {
 
 #endif /* HAVE_VC */
 
+namespace GPU {
+struct OpenCL {};
+enum Implementation {
+    OpenCLImpl
+};
+}
+
 
 #include <QDebug>
 #include <ksharedconfig.h>
@@ -115,6 +122,16 @@ createOptimizedClass(typename FactoryType::ParamType param, bool forceScalarImpl
 {
     if(forceScalarImplemetation){
         return FactoryType::template create<Vc::ScalarImpl>(param);
+    }
+    return createOptimizedClass<FactoryType>(param);
+}
+
+template<class FactoryType>
+typename FactoryType::ReturnType
+createOptimizedClass(typename FactoryType::ParamType param, GPU::OpenCL)
+{
+    if (getenv("KIS_OCL_ENABLE")) {
+        return FactoryType::template create<GPU::OpenCLImpl>(param);
     }
     return createOptimizedClass<FactoryType>(param);
 }
