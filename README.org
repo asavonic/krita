@@ -1,0 +1,28 @@
+* Status
+Build is ok; passed all existing tests.
+Tested on Nvidia GTX 1070 on Linux.
+
+Performance is good (up to 27x speedup) on large tiles, but poor on
+small tiles.
+
+* Algorithms
+- [X] CompositeOpAlphaDarken32: implemented, performance: poor
+- [ ] CompositeOpAlphaDarken128
+- [ ] CompositeOpOver32
+- [ ] CompositeOpOver128
+
+* Current problems
+- Tile size is too small ::
+     Average working area of a composite function is 64x64 pixels
+     (16KB), which means that runtime overhead of memory transfer b/w
+     a host and a device is significant.
+
+- Need more testing ::
+     Unit tests for OpenCL components, more tests for composite ops.
+
+* Next steps
+- Optimize CompositeOpAlphaDarken32 for small tiles
+  - [ ] Pre-allocate pinned memory
+  - [ ] Allocate tiles in GPU memory and keep it consistent with CPU.
+
+- Run on Intel OpenCL for CPU and GPU.
